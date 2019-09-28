@@ -37,7 +37,7 @@ class HelloWorldTableViewController: UITableViewController {
         
         let helloWorldText = helloWorldTextArray[indexPath.row]
         
-        cell.setCellToBoldIfRequired(helloWorldText.isTextBolded)
+        cell.setTextToBoldIfRequired(helloWorldText.isTextBolded)
 
         let shoudldPerformOperation: Bool = !helloWorldText.isTextBolded && !tableView.isDragging && !tableView.isDecelerating
         

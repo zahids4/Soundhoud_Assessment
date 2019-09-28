@@ -11,7 +11,7 @@ import UIKit
 class HelloWorldCell: UITableViewCell {
     @IBOutlet weak var helleWorldLabel: UILabel!
     
-    func setCellToBoldIfRequired(_ isFontBolded: Bool) {
+    func setTextToBoldIfRequired(_ isFontBolded: Bool) {
         DispatchQueue.main.async {
             if isFontBolded {
                 self.helleWorldLabel?.font = UIFont.boldSystemFont(ofSize: 16.0)
