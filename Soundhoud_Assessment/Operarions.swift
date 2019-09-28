@@ -12,7 +12,7 @@ fileprivate typealias voidClosure = () -> ()
 fileprivate let sleepTime: useconds_t = 2000000
 
 class CpuExtensiveOperations {
-    lazy var operationsInProgress: [IndexPath: Operation] = [:]
+    lazy var operationsInProgress: [IndexPath: CpuExtensiveOperation] = [:]
     lazy var operationQueue = OperationQueue()
 }
 
