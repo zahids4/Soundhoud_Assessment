@@ -39,7 +39,9 @@ class HelloWorldTableViewController: UITableViewController {
         
         cell.setCellToBoldIfRequired(helloWorldText.isTextBolded)
 
-        if !helloWorldText.isTextBolded && !tableView.isDragging && !tableView.isDecelerating {
+        let shoudldPerformOperation: Bool = !helloWorldText.isTextBolded && !tableView.isDragging && !tableView.isDecelerating
+        
+        if shoudldPerformOperation {
             startCpuExtensiveOperation(for: helloWorldText, at: indexPath)
         }
         
@@ -72,7 +74,7 @@ class HelloWorldTableViewController: UITableViewController {
 }
 
 
-//This is not needed but makes it much more efficient when scrolling.
+// This is not needed but makes it much more efficient when scrolling.
 extension HelloWorldTableViewController {
     override func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         shoudSuspendOperations(true)
@@ -123,4 +125,3 @@ extension HelloWorldTableViewController {
         }
     }
 }
-

@@ -8,7 +8,7 @@
 
 import Foundation
 
-typealias voidClosure = () -> ()
+fileprivate typealias voidClosure = () -> ()
 fileprivate let sleepTime: useconds_t = 2000000
 
 class CpuExtensiveOperations {
@@ -35,7 +35,7 @@ class CpuExtensiveOperation: Operation {
         }
     }
     
-    func performTask(closure: @escaping voidClosure) {
+    fileprivate func performTask(closure: @escaping voidClosure) {
         usleep(sleepTime)
         closure()
     }
